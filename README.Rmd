@@ -2,7 +2,9 @@
 title: "README"
 author: "Vladimir Mijatovic"
 date: "1/27/2021"
-output: html_document
+output: 
+        html_document:
+                keep_md: true
 ---
 
 ```{r setup, include=FALSE}
@@ -96,7 +98,7 @@ full_set <- cbind(full_subject, full_y, full_x)
 ```
 
 
-
+```{r}
 #let's extract columns that have 'mean' or 'std' in them
 
 col_names <- colnames(full_set)
@@ -110,10 +112,11 @@ subset_mean_and_std_measurements <- full_set[, selected_columns]
 #to create final dataset
 subset_mean_and_std <- cbind(full_subject, full_y, subset_mean_and_std_measurements)
 
+```
 
-# 5. From the data set in step 4, creates a second, 
-# independent tidy data set with the average
-# of each variable for each activity and each subject.
+
+
+5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 
 
 ```{r}
